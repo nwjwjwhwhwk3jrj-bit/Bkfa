@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الواجب الثاني - برمجة ويب 2</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            direction: ltr; /* English content direction */
+            text-align: left;
+            margin: 20px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 {
+            color: #0056b3;
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 5px;
+        }
+        h1 {
+            text-align: center;
+            color: #003d80;
+        }
+        .section {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #e9ecef;
+            border-left: 5px solid #0056b3;
+        }
+        code {
+            background-color: #eee;
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-family: Consolas, 'Courier New', monospace;
+        }
+        hr {
+            display: none; /* Hide the old hr tags */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Second assignment - web programming 2</h1>
+
+        <div class="section">
+            <h2>Math Functions (8 degree)</h2>
+            <?php
+                $number = -15.7;
+                echo "Original Number: <code>$number</code> <br>";
+                echo "<code>abs()</code>: " . abs($number) . "<br>";
+                echo "<code>round()</code>: " . round($number) . "<br>";
+                echo "<code>pi()</code>: " . pi() . "<br>";
+                echo "<code>min(10, 20, 5, 40)</code>: " . min(10, 20, 5, 40) . "<br>";
+            ?>
+        </div>
+
+        <div class="section">
+            <h2>Constants (2 degree)</h2>
+            <?php
+                define("MESSAGE", "Hello World");
+                echo "The constant MESSAGE is: <code>" . MESSAGE . "</code><br>";
+            ?>
+        </div>
+
+        <div class="section">
+            <h2>File Path (2 degree)</h2>
+            <?php
+                echo "Full Path: <code>" . __FILE__ . "</code><br>";
+            ?>
+        </div>
+
+        <div class="section">
+            <h2>Integer Operations</h2>
+            <?php
+                $var1 = 10;
+                $var2 = 5;
+                echo "Variable 1: <code>$var1</code>, Variable 2: <code>$var2</code> <br><br>";
+
+                // Apply arithmetic operators (6 degree)
+                echo "<h3>Arithmetic Operators</h3>";
+                echo "Addition (10 + 5): <code>" . ($var1 + $var2) . "</code><br>";
+                echo "Subtraction (10 - 5): <code>" . ($var1 - $var2) . "</code><br>";
+                echo "Multiplication (10 * 5): <code>" . ($var1 * $var2) . "</code><br>";
+                echo "Division (10 / 5): <code>" . ($var1 / $var2) . "</code><br><br>";
+
+                // Apply comparison operators (6 degree)
+                echo "<h3>Comparison Operators</h3>";
+                echo "Is var1 > var2? <code>" . ($var1 > $var2 ? 'true' : 'false') . "</code><br>";
+                echo "Is var1 == var2? <code>" . ($var1 == $var2 ? 'true' : 'false') . "</code><br><br>";
+
+                // Apply Increment / Decrement Operators (4 degree)
+                echo "<h3>Increment/Decrement Operators</h3>";
+                $temp_var = $var1;
+                $temp_var++;
+                echo "var1 after increment: <code>" . $temp_var . "</code><br>";
+                $temp_var = $var2;
+                $temp_var--;
+                echo "var2 after decrement: <code>" . $temp_var . "</code><br>";
+            ?>
+        </div>
+
+        <div class="section">
+            <h2>String Length Check (5 degree)</h2>
+            <?php
+                $my_string = "Programming";
+                echo "String: <code>'$my_string'</code> <br>";
+                if (strlen($my_string) >= 7) {
+                    echo "Result: <strong>accepted value</strong> <br>";
+                } else {
+                    echo "Result: <strong>rejected value</strong> <br>";
+                }
+            ?>
+        </div>
+
+        <div class="section">
+            <h2>Indexed Array (2 degree) & Sort (2 degree)</h2>
+            <?php
+                $indexed_array = ["Apple", "Banana", "Cherry"];
+                echo "Original Array: <code>" . implode(", ", $indexed_array) . "</code><br>";
+                
+                sort($indexed_array);
+                echo "Sorted Array: <code>" . implode(", ", $indexed_array) . "</code><br>";
+            ?>
+        </div>
+
+        <div class="section">
+            <h2>Associative Array (3 degree)</h2>
+            <?php
+                $assoc_array = ["name" => "Ali", "age" => 25, "city" => "Gaza"];
+
+                // Print values (2 degree)
+                echo "<h3>Values Only</h3>";
+                foreach ($assoc_array as $value) {
+                    echo "<code>$value</code><br>";
+                }
+
+                echo "<br>";
+
+                // Print keys and values (3 degree)
+                echo "<h3>Keys and Values</h3>";
+                foreach ($assoc_array as $key => $value) {
+                    echo "<code>$key</code>: <code>$value</code> <br>";
+                }
+            ?>
+        </div>
+
+        <div class="section">
+            <h2>Even/Odd Function (5 degree)</h2>
+            <?php
+                function isEven($number) {
+                    return ($number % 2 == 0);
+                }
+
+                $test_num1 = 10;
+                $test_num2 = 7;
+                echo "Is $test_num1 even? <code>" . (isEven($test_num1) ? 'true' : 'false') . "</code><br>";
+                echo "Is $test_num2 even? <code>" . (isEven($test_num2) ? 'true' : 'false') . "</code><br>";
+            ?>
+        </div>
+    </div>
+
+</body>
+</html>
